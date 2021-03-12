@@ -1,0 +1,245 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+  .stages-work__img
+    max-width: 500px
+
+  .stages-work__img:before
+    width: 450px
+    height: 500px
+
+  .stages-work__content
+    padding: 70px 0
+
+  .about .stages-work__img:before
+    width: 550px
+    height: 595px
+
+  .about-content
+    padding: 50px 0
+
+  .callback .stages-work__img:before
+    width: 500px
+    height: 550px
+    right: -80px
+
+  .help-box__body
+    padding: 24px
+
+  .main-img:before
+    width: 350px
+    height: 350px
+
+  header
+    margin: 0
+
+  header .btn span
+    padding: 8px 20px
+
+  .nav-link
+    font-size: 14px
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+  .stages-work__img
+    max-width: 400px
+
+  .about-content, .contacts-wrapper
+    padding: 40px 0
+
+  .list-social li
+    margin: 0 10px 0 0
+
+  .help h2
+    margin: 0 auto
+
+  .service-category-box__body
+    padding: 24px
+
+  .service-category
+    padding: 60px 0 50px
+
+  h1, h2
+    line-height: normal
+    font-size: 45px
+
+  header .nav
+    display: none
+
+  .btn-burger
+    display: flex
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 930px)
+  .stages-work__img
+    max-width: 350px
+
+
+
+@media only screen and (max-width : 768px)
+  .map
+    width: calc(100% + 48px)
+    float: none
+    margin: 0 -24px
+    height: 400px
+
+  .document
+    margin: 30px 0
+
+  h1, h2
+    font-size: 40px
+    line-height: normal
+
+  .stages-work__img
+    position: relative
+    margin: 0 0 0 auto
+
+  .callback-content
+    padding: 60px 0 0
+
+  .callback .stages-work__img:after
+    bottom: 20px
+
+  .p-80
+    padding: 40px 0
+
+  h3
+    font-size: 18px
+    line-height: normal
+
+  .article-box__img
+    width: 240px
+
+  .article-box__body
+    width: calc(100% - 240px)
+
+  .article-box__wrapper
+    padding: 24px
+
+  .about .stages-work__img
+    margin: 0 auto 0 0
+    &:after
+      bottom: 20px
+
+  .about-content h2
+    margin: 0 0 20px
+
+  .stages-work__img:after
+    bottom: 20px
+
+  .stages-work__content
+    padding: 40px 0
+
+  .service-category
+    padding: 50px 0 30px
+    h2
+      margin: 0 auto 30px
+      br
+        display: none
+
+  .service-category-two .breadcrumb
+    margin: 0 auto 20px
+
+  .main-img
+    margin: 20px auto 0
+    max-width: 400px
+    width: 100%
+    &:before
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+
+  .logo
+    margin: 0 auto
+    display: flex
+    align-items: center
+    justify-content: center
+    max-width: 300px
+    width: 100%
+
+  header
+    padding: 0 0 30px
+
+  .breadcrumb
+    font-size: 14px
+    justify-content: center
+
+  .header-top
+    padding: 10px 0
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 680px)
+  .article-box__wrapper
+    flex-direction: column
+    align-items: center
+
+  .article-box__img
+    width: 100%
+    margin: 0 auto 20px
+
+  .article-box__body
+    padding: 0
+    width: 100%
+
+  .articles-slider
+    padding: 0 30px
+
+
+@media only screen and (max-width : 575px)
+  .list-social
+    li
+      margin: 0 10px 10px 0
+      &:last-child
+        margin: 0 0 10px
+
+  h1, h2
+    font-size: 30px
+
+  .article-box__img
+    height: 120px
+
+  .list-dots li:before
+    margin: 8px 15px 0 0
+
+  .main-img:before
+    width: 300px
+    height: 300px
+
+  main
+    padding: 0 0 40px
+
+  .btn
+    font-size: 14px
+
+  .logo
+    max-width: 220px
+
+  .service-category-box
+    min-height: auto
+
+  .legal-services h2
+    margin: 0 auto
+
+  .legal-services__box
+    min-height: 300px
+    br
+      display: none
+
+  .legal-services__body
+    padding: 24px
+
+
+@media only screen and (max-width : 480px)
+	header
+    .btn
+      display: none
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 360px)
+  .breadcrumb
+    font-size: 12px
+
