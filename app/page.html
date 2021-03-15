@@ -33,24 +33,27 @@
 <body>
 
 <div class="mobile-menu">
-  <div class="btn-close"></div>
-  <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
+  <div class="mobile-menu__header">
+    <a href="index.html" class="logo-mobile"><img src="img/logo-mobile.png" alt=""></a>
 
-  <ul class="nav">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
-         aria-haspopup="true" aria-expanded="false">Услуги</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-        <a class="dropdown-item" href="#">Действие</a>
-        <a class="dropdown-item" href="#">Другое действие</a>
-        <a class="dropdown-item" href="#">Что-то еще здесь</a>
-      </div>
+    <div class="close-mobile-menu">
+      <div class="close-mobile-menu__text">Закрыть</div>
+      <div class="btn btn-white"><span><svg class="svg-icon"><use xlink:href="img/sprite.svg#close"></use></svg></span></div>
+    </div>
+  </div>
+
+  <ul class="nav nav-menu">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">Кредитование</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="page.html">Страхование</a>
     </li>
     <li class="nav-item">
       <a class="nav-link go_to" href="#about">О компании</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link go_to" href="#articles">Статьи</a>
+      <a class="nav-link" href="articles.html">Статьи</a>
     </li>
   </ul>
 
@@ -60,35 +63,34 @@
     <span class="phone-text">8 800 888-88-88</span>
   </a>
 
-  <a href="#" class="btn btn-white"><span>Перезвоните мне</span></a>
+  <a href="#callback" class="btn btn-white go_to"><span>Перезвоните мне</span></a>
 </div>
 
 <header>
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-4">
+      <div class="col-5 col-sm-3 col-md-4">
         <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
       </div>
 
-      <div class="col-12 col-md-8">
+      <div class="col-7 col-sm-9 col-md-8">
         <div class="row">
           <div class="col-12">
             <div class="header-top">
-              <ul class="nav">
+              <ul class="nav nav-menu">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                      aria-haspopup="true" aria-expanded="false">Услуги</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Действие</a>
-                    <a class="dropdown-item" href="#">Другое действие</a>
-                    <a class="dropdown-item" href="#">Что-то еще здесь</a>
+                    <a class="dropdown-item" href="#">Кредитование</a>
+                    <a class="dropdown-item" href="#">Страхование</a>
                   </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link go_to" href="#about">О компании</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link go_to" href="#articles">Статьи</a>
+                  <a class="nav-link" href="articles.html">Статьи</a>
                 </li>
               </ul>
 
@@ -98,21 +100,21 @@
                 <span class="phone-text">8 800 888-88-88</span>
               </a>
 
-              <a href="#" class="btn btn-white"><span>Перезвоните мне</span></a>
+              <a href="#callback" class="btn btn-white go_to"><span>Перезвоните мне</span></a>
               <div class="btn-burger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <div class="btn-burger__text">Меню</div>
+                <div class="btn btn-white">
+                  <span><svg class="svg-icon"><use xlink:href="img/sprite.svg#burger"></use></svg></span>
+                </div>
               </div>
+
             </div>
           </div>
-          <div class="col-12">
-            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+          <div class="col-12 breadcrumb-nav">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html"><span>тут Кредитование</span></a></li>
                 <li class="breadcrumb-item active"><a href="page.html"><span>тут Страхование</span></a></li>
               </ol>
-            </nav>
           </div>
         </div>
       </div>
@@ -149,104 +151,260 @@
       <div class="col-12 col-lg-10 offset-lg-1 text-center"><h2>Вам доступен любой вид страхования <br>
         в офисе или online</h2></div>
 
+
       <div class="col-12">
-        <nav aria-label="breadcrumb" class="breadcrumb-nav">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html"><span>Частным клиентам</span></a></li>
-            <li class="breadcrumb-item active"><a href="page.html"><span>Корпоративным клиентам</span></a></li>
-          </ol>
-        </nav>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item nav-tabs-item" role="presentation">
+            <a class="nav-link nav-tabs-link active" id="private-tab" data-toggle="tab" href="#private" role="tab" aria-controls="private" aria-selected="true">Частным клиентам</a>
+          </li>
+          <li class="nav-item nav-tabs-item" role="presentation">
+            <a class="nav-link nav-tabs-link" id="corporation-tab" data-toggle="tab" href="#corporation" role="tab" aria-controls="corporation" aria-selected="false">Корпоративным клиентам</a>
+          </li>
+        </ul>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4 mb-24">
-        <div class="service-category-box">
-          <div class="service-category-box__body">
-            <div class="service-category-box__icon">
-              <svg class="svg-icon">
-                <use xlink:href="img/sprite.svg#car"></use>
-              </svg>
-            </div>
+      <div class="col-12">
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="private" role="tabpanel" aria-labelledby="private-tab">
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-4 mb-24">
+                <div class="service-category-box">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#car"></use>
+                      </svg>
+                    </div>
 
-            <h3>Автомобили</h3>
-            <p>КАСКО, ОСАГО, продление со всеми доступными скидками</p>
+                    <h3>Автомобили</h3>
+                    <p>КАСКО, ОСАГО, продление со всеми доступными скидками</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-24">
+                <div class="service-category-box">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#mortgage2"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Жилье</h3>
+                    <p>Страхование квартиры, дома, ипотеки</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-24">
+                <div class="service-category-box">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#luggage"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Путешествия</h3>
+                    <p>ВЗР, Зеленая карта, водный транспорт</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-24">
+                <div class="service-category-box">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#locker"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Имущество</h3>
+                    <p>Всё включено, личное, защита покупки</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-24">
+                <div class="service-category-box">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#medical"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Здоровье</h3>
+                    <p>ДМС, антиклещ, защита семьи, стопкороновирус</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4 mb-24">
+                <div class="service-category-box">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#wallet"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Инвестиции</h3>
+                    <p>Инвестировать, накопить, сохранить</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="corporation" role="tabpanel" aria-labelledby="corporation-tab">
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-3 mb-24">
+                <div class="service-category-box service-category-box-min">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#car"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Автотранспорт</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3 mb-24">
+                <div class="service-category-box service-category-box-min">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#shop"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Имущество</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3 mb-24">
+                <div class="service-category-box service-category-box-min">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#medical"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Медицина</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3 mb-24">
+                <div class="service-category-box service-category-box-min">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#accident"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Несчастный случай</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3 mb-24">
+                <div class="service-category-box service-category-box-min">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#pharmacy"></use>
+                      </svg>
+                    </div>
+
+                    <h3>ОМС</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3 mb-24">
+                <div class="service-category-box service-category-box-min">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#court"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Ответственность</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3 mb-24">
+                <div class="service-category-box service-category-box-min">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#shipped"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Грузоперевозки</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3 mb-24">
+                <div class="service-category-box service-category-box-min">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#bus"></use>
+                      </svg>
+                    </div>
+
+                    <h3>ОСОП</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3 mb-24 offset-lg-3">
+                <div class="service-category-box service-category-box-min">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#crane"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Строительство</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3 mb-24">
+                <div class="service-category-box service-category-box-min">
+                  <div class="service-category-box__body">
+                    <div class="service-category-box__icon">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#alarm"></use>
+                      </svg>
+                    </div>
+
+                    <h3>Опасные объекты</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4 mb-24">
-        <div class="service-category-box">
-          <div class="service-category-box__body">
-            <div class="service-category-box__icon">
-              <svg class="svg-icon">
-                <use xlink:href="img/sprite.svg#mortgage2"></use>
-              </svg>
-            </div>
 
-            <h3>Жилье</h3>
-            <p>Страхование квартиры, дома, ипотеки</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4 mb-24">
-        <div class="service-category-box">
-          <div class="service-category-box__body">
-            <div class="service-category-box__icon">
-              <svg class="svg-icon">
-                <use xlink:href="img/sprite.svg#luggage"></use>
-              </svg>
-            </div>
-
-            <h3>Путешествия</h3>
-            <p>ВЗР, Зеленая карта, водный транспорт</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4 mb-24">
-        <div class="service-category-box">
-          <div class="service-category-box__body">
-            <div class="service-category-box__icon">
-              <svg class="svg-icon">
-                <use xlink:href="img/sprite.svg#locker"></use>
-              </svg>
-            </div>
-
-            <h3>Имущество</h3>
-            <p>Всё включено, личное, защита покупки</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4 mb-24">
-        <div class="service-category-box">
-          <div class="service-category-box__body">
-            <div class="service-category-box__icon">
-              <svg class="svg-icon">
-                <use xlink:href="img/sprite.svg#medical"></use>
-              </svg>
-            </div>
-
-            <h3>Здоровье</h3>
-            <p>ДМС, антиклещ, защита семьи, стопкороновирус</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-4 mb-24">
-        <div class="service-category-box">
-          <div class="service-category-box__body">
-            <div class="service-category-box__icon">
-              <svg class="svg-icon">
-                <use xlink:href="img/sprite.svg#wallet"></use>
-              </svg>
-            </div>
-
-            <h3>Инвестиции</h3>
-            <p>Инвестировать, накопить, сохранить</p>
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -422,11 +580,11 @@
           <div class="slide">
             <div class="article-box">
               <div class="article-box__wrapper">
-                <div class="article-box__img"><img src="img/article.png" alt=""></div>
+                <a href="article.html" class="article-box__img"><img src="img/article.png" alt=""></a>
                 <div class="article-box__body">
-                  <h3>Россельхозбанк снизил ставки <br>
+                  <a href="article.html" class="article-box__title">Россельхозбанк снизил ставки <br>
                     на потребительские кредиты
-                  </h3>
+                  </a>
                   <div class="box-text">
                     <p>Работаем даже с клиентами, имеющими плохую кредитную историю, добиваясь высокого процен…</p>
                   </div>
@@ -441,13 +599,17 @@
           <div class="slide">
             <div class="article-box">
               <div class="article-box__wrapper">
-                <div class="article-box__img"><img src="img/article.png" alt=""></div>
+                <a href="article.html" class="article-box__img"><img src="img/article.png" alt=""></a>
                 <div class="article-box__body">
-                  <h3>Россельхозбанк снизил ставки
+                  <a href="article.html" class="article-box__title">Россельхозбанк снизил ставки <br>
                     на потребительские кредиты
-                  </h3>
+                  </a>
                   <div class="box-text">
                     <p>Работаем даже с клиентами, имеющими плохую кредитную историю, добиваясь высокого процен…</p>
+                  </div>
+                  <div class="date">
+                    <div class="date-icon"><svg class="svg-icon"><use xlink:href="img/sprite.svg#union"></use></svg></div>
+                    <div class="date-text">21.02.2021</div>
                   </div>
                 </div>
               </div>
@@ -456,13 +618,17 @@
           <div class="slide">
             <div class="article-box">
               <div class="article-box__wrapper">
-                <div class="article-box__img"><img src="img/article.png" alt=""></div>
+                <a href="article.html" class="article-box__img"><img src="img/article.png" alt=""></a>
                 <div class="article-box__body">
-                  <h3>Россельхозбанк снизил ставки
+                  <a href="article.html" class="article-box__title">Россельхозбанк снизил ставки <br>
                     на потребительские кредиты
-                  </h3>
+                  </a>
                   <div class="box-text">
                     <p>Работаем даже с клиентами, имеющими плохую кредитную историю, добиваясь высокого процен…</p>
+                  </div>
+                  <div class="date">
+                    <div class="date-icon"><svg class="svg-icon"><use xlink:href="img/sprite.svg#union"></use></svg></div>
+                    <div class="date-text">21.02.2021</div>
                   </div>
                 </div>
               </div>
@@ -472,13 +638,13 @@
       </div>
 
       <div class="col-12">
-        <a href="#" class="btn btn-blue"><span>Все статьи</span></a>
+        <a href="articles.html" class="btn btn-blue"><span>Все статьи</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="callback">
+<section class="callback" id="callback">
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-7 col-lg-6">

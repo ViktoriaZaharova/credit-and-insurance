@@ -3,8 +3,8 @@ $('.stages-work-slider').slick({
     infinite: false,
     fade: true,
     appendArrows: '.stages-work-slider__nav',
-    prevArrow: '<button type="button" class="slick-prev slick-arrow-my"><span>Назад</span></button>',
-    nextArrow: '<button type="button" class="slick-next slick-arrow-my"><span>дальше</span></button>'
+    prevArrow: '<button type="button" class="slick-prev slick-arrow-my btn btn-blue"><span>Назад</span></button>',
+    nextArrow: '<button type="button" class="slick-next slick-arrow-my btn btn-blue"><span>дальше</span></button>'
 });
 
 $('.articles-slider').slick({
@@ -24,23 +24,58 @@ $('.btn-burger').on('click', function () {
    $('.mobile-menu').fadeToggle();
 });
 
-$('.btn-close').on('click', function () {
+$('.close-mobile-menu').on('click', function () {
     $('.mobile-menu').fadeOut();
 });
 
 //плавный скролл
-$(document).ready(function () {
-    $('.go_to').click(function () {
-        var scroll_el = $(this).attr('href');
-        if ($(scroll_el).length != 0) {
-            $('html, body').animate({
-                scrollTop: $(scroll_el).offset().top
-            }, 500);
-        }
-        return false;
+$(document).ready(function () { //плавный скролл
+    $(".go_to").on("click", function (event) {
+        //отменяем стандартную обработку нажатия по ссылке
+        event.preventDefault();
+
+        //забираем идентификатор бока с атрибута href
+        var id = $(this).attr('href'),
+            heightHeader = $('header').height(),
+            //узнаем высоту от начала страницы до блока на который ссылается якорь
+            top = $(id).offset().top;
+
+        //анимируем переход на расстояние - top за 500 мс
+        $('body,html').animate({scrollTop: top - heightHeader}, 500);
     });
 });
 //плавный скролл end
+
+// fixed header
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+        $('header').addClass('fixed');
+    } else {
+        $('header').removeClass('fixed');
+    }
+});
+
+// load more
+$('.load-more').on('click', function (e) {
+    e.preventDefault();
+    $('.article-box-row:hidden').slice(0, 3).slideDown();
+
+    var onBlock = $('.article-box-row:hidden').length;
+    if(onBlock <= 0) {
+        $('.load-more').hide();
+    }
+});
+
+
+// активная ссылка меню
+$('.nav-menu li a').each(function () {
+    var location = window.location.href;
+    var link = this.href;
+    if (location === link) {
+        $(this).addClass('current');
+    }
+});
+// end
 
 // Инициализация карты
 function init () {

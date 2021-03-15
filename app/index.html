@@ -33,24 +33,27 @@
 <body>
 
 <div class="mobile-menu">
-  <div class="btn-close"></div>
-  <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
+  <div class="mobile-menu__header">
+    <a href="index.html" class="logo-mobile"><img src="img/logo-mobile.png" alt=""></a>
 
-  <ul class="nav">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
-         aria-haspopup="true" aria-expanded="false">Услуги</a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-        <a class="dropdown-item" href="#">Действие</a>
-        <a class="dropdown-item" href="#">Другое действие</a>
-        <a class="dropdown-item" href="#">Что-то еще здесь</a>
-      </div>
+    <div class="close-mobile-menu">
+      <div class="close-mobile-menu__text">Закрыть</div>
+      <div class="btn btn-white"><span><svg class="svg-icon"><use xlink:href="img/sprite.svg#close"></use></svg></span></div>
+    </div>
+  </div>
+
+  <ul class="nav nav-menu">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">Кредитование</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="page.html">Страхование</a>
     </li>
     <li class="nav-item">
       <a class="nav-link go_to" href="#about">О компании</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link go_to" href="#articles">Статьи</a>
+      <a class="nav-link" href="articles.html">Статьи</a>
     </li>
   </ul>
 
@@ -60,35 +63,34 @@
     <span class="phone-text">8 800 888-88-88</span>
   </a>
 
-  <a href="#" class="btn btn-white"><span>Перезвоните мне</span></a>
+  <a href="#callback" class="btn btn-white go_to"><span>Перезвоните мне</span></a>
 </div>
 
 <header>
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-4">
+      <div class="col-5 col-sm-3 col-md-4">
         <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
       </div>
 
-      <div class="col-12 col-md-8">
+      <div class="col-7 col-sm-9 col-md-8">
         <div class="row">
           <div class="col-12">
             <div class="header-top">
-              <ul class="nav">
+              <ul class="nav nav-menu">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                      aria-haspopup="true" aria-expanded="false">Услуги</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Действие</a>
-                    <a class="dropdown-item" href="#">Другое действие</a>
-                    <a class="dropdown-item" href="#">Что-то еще здесь</a>
+                    <a class="dropdown-item" href="#">Кредитование</a>
+                    <a class="dropdown-item" href="#">Страхование</a>
                   </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link go_to" href="#about">О компании</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link go_to" href="#articles">Статьи</a>
+                  <a class="nav-link" href="articles.html">Статьи</a>
                 </li>
               </ul>
 
@@ -98,21 +100,21 @@
                 <span class="phone-text">8 800 888-88-88</span>
               </a>
 
-              <a href="#" class="btn btn-white"><span>Перезвоните мне</span></a>
+              <a href="#callback" class="btn btn-white go_to"><span>Перезвоните мне</span></a>
               <div class="btn-burger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <div class="btn-burger__text">Меню</div>
+                <div class="btn btn-white">
+                  <span><svg class="svg-icon"><use xlink:href="img/sprite.svg#burger"></use></svg></span>
+                </div>
               </div>
+
             </div>
           </div>
-          <div class="col-12">
-            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+          <div class="col-12 breadcrumb-nav">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item active"><a href="index.html"><span>тут Кредитование</span></a></li>
                 <li class="breadcrumb-item"><a href="page.html"><span>тут Страхование</span></a></li>
               </ol>
-            </nav>
           </div>
         </div>
       </div>
@@ -297,7 +299,7 @@
 
       </div>
 
-        <div class="stages-work__img"><img src="img/img2.png" alt=""></div>
+      <div class="stages-work__img"><img src="img/img2.png" alt=""></div>
     </div>
   </div>
 </section>
@@ -359,7 +361,7 @@
       </div>
 
       <div class="col-12">
-        <a href="#" class="btn btn-blue"><span>Оставить заявку</span></a>
+        <a href="#callback" class="btn btn-blue go_to"><span>Оставить заявку</span></a>
       </div>
     </div>
   </div>
@@ -390,7 +392,7 @@
           </div>
         </div>
       </div>
-        <div class="stages-work__img"><img src="img/img3.png" alt=""></div>
+      <div class="stages-work__img"><img src="img/img3.png" alt=""></div>
     </div>
   </div>
 </section>
@@ -405,11 +407,11 @@
           <div class="slide">
             <div class="article-box">
               <div class="article-box__wrapper">
-                <div class="article-box__img"><img src="img/article.png" alt=""></div>
+                <a href="article.html" class="article-box__img"><img src="img/article.png" alt=""></a>
                 <div class="article-box__body">
-                  <h3>Россельхозбанк снизил ставки <br>
+                  <a href="article.html" class="article-box__title">Россельхозбанк снизил ставки <br>
                     на потребительские кредиты
-                  </h3>
+                  </a>
                   <div class="box-text">
                     <p>Работаем даже с клиентами, имеющими плохую кредитную историю, добиваясь высокого процен…</p>
                   </div>
@@ -424,13 +426,17 @@
           <div class="slide">
             <div class="article-box">
               <div class="article-box__wrapper">
-                <div class="article-box__img"><img src="img/article.png" alt=""></div>
+                <a href="article.html" class="article-box__img"><img src="img/article.png" alt=""></a>
                 <div class="article-box__body">
-                  <h3>Россельхозбанк снизил ставки
+                  <a href="article.html" class="article-box__title">Россельхозбанк снизил ставки <br>
                     на потребительские кредиты
-                  </h3>
+                  </a>
                   <div class="box-text">
                     <p>Работаем даже с клиентами, имеющими плохую кредитную историю, добиваясь высокого процен…</p>
+                  </div>
+                  <div class="date">
+                    <div class="date-icon"><svg class="svg-icon"><use xlink:href="img/sprite.svg#union"></use></svg></div>
+                    <div class="date-text">21.02.2021</div>
                   </div>
                 </div>
               </div>
@@ -439,13 +445,17 @@
           <div class="slide">
             <div class="article-box">
               <div class="article-box__wrapper">
-                <div class="article-box__img"><img src="img/article.png" alt=""></div>
+                <a href="article.html" class="article-box__img"><img src="img/article.png" alt=""></a>
                 <div class="article-box__body">
-                  <h3>Россельхозбанк снизил ставки
+                  <a href="article.html" class="article-box__title">Россельхозбанк снизил ставки <br>
                     на потребительские кредиты
-                  </h3>
+                  </a>
                   <div class="box-text">
                     <p>Работаем даже с клиентами, имеющими плохую кредитную историю, добиваясь высокого процен…</p>
+                  </div>
+                  <div class="date">
+                    <div class="date-icon"><svg class="svg-icon"><use xlink:href="img/sprite.svg#union"></use></svg></div>
+                    <div class="date-text">21.02.2021</div>
                   </div>
                 </div>
               </div>
@@ -455,13 +465,13 @@
       </div>
 
       <div class="col-12">
-        <a href="#" class="btn btn-blue"><span>Все статьи</span></a>
+        <a href="articles.html" class="btn btn-blue"><span>Все статьи</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="callback">
+<section class="callback" id="callback">
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-7 col-lg-6">
@@ -501,7 +511,7 @@
           </form>
         </div>
       </div>
-        <div class="stages-work__img"><img src="img/img4.png" alt=""></div>
+      <div class="stages-work__img"><img src="img/img4.png" alt=""></div>
     </div>
   </div>
 </section>
@@ -513,39 +523,69 @@
         <div class="contacts-wrapper">
           <h2>Контакты</h2>
           <div class="contacts-box">
-            <div class="contacts-box__icon"><svg class="svg-icon"><use xlink:href="img/sprite.svg#location"></use></svg></div>
+            <div class="contacts-box__icon">
+              <svg class="svg-icon">
+                <use xlink:href="img/sprite.svg#location"></use>
+              </svg>
+            </div>
             <div class="contacts-box__text">350033, Краснодар, ул. Ставропольская, 96а, офис 206</div>
           </div>
 
           <a href="tel:+79324445252" class="contacts-box">
-            <span class="contacts-box__icon"><svg class="svg-icon"><use xlink:href="img/sprite.svg#phone"></use></svg></span>
+            <span class="contacts-box__icon"><svg class="svg-icon"><use
+                xlink:href="img/sprite.svg#phone"></use></svg></span>
             <span class="contacts-box__text">8 932 444-52-52</span>
           </a>
 
           <a href="mailto:info-tkc@bk.ru" class="contacts-box mail">
-            <span class="contacts-box__icon"><svg class="svg-icon"><use xlink:href="img/sprite.svg#mail"></use></svg></span>
+            <span class="contacts-box__icon"><svg class="svg-icon"><use
+                xlink:href="img/sprite.svg#mail"></use></svg></span>
             <span class="contacts-box__text">info-tkc@bk.ru</span>
           </a>
 
           <div class="document">
-            <p>ИНН:  231105646253</p>
-            <p>ОГРН:  321237500022975</p>
+            <p>ИНН: 231105646253</p>
+            <p>ОГРН: 321237500022975</p>
           </div>
 
           <ul class="list-social">
-            <li><a href="#"><svg class="svg-icon"><use xlink:href="img/sprite.svg#vk"></use></svg></a></li>
-            <li><a href="#"><svg class="svg-icon"><use xlink:href="img/sprite.svg#instagram"></use></svg></a></li>
-            <li><a href="#"><svg class="svg-icon"><use xlink:href="img/sprite.svg#fb"></use></svg></a></li>
-            <li><a href="#"><svg class="svg-icon"><use xlink:href="img/sprite.svg#whatsapp"></use></svg></a></li>
-            <li><a href="#"><svg class="svg-icon"><use xlink:href="img/sprite.svg#viber"></use></svg></a></li>
-            <li><a href="#"><svg class="svg-icon"><use xlink:href="img/sprite.svg#telegram"></use></svg></a></li>
+            <li><a href="#">
+              <svg class="svg-icon">
+                <use xlink:href="img/sprite.svg#vk"></use>
+              </svg>
+            </a></li>
+            <li><a href="#">
+              <svg class="svg-icon">
+                <use xlink:href="img/sprite.svg#instagram"></use>
+              </svg>
+            </a></li>
+            <li><a href="#">
+              <svg class="svg-icon">
+                <use xlink:href="img/sprite.svg#fb"></use>
+              </svg>
+            </a></li>
+            <li><a href="#">
+              <svg class="svg-icon">
+                <use xlink:href="img/sprite.svg#whatsapp"></use>
+              </svg>
+            </a></li>
+            <li><a href="#">
+              <svg class="svg-icon">
+                <use xlink:href="img/sprite.svg#viber"></use>
+              </svg>
+            </a></li>
+            <li><a href="#">
+              <svg class="svg-icon">
+                <use xlink:href="img/sprite.svg#telegram"></use>
+              </svg>
+            </a></li>
           </ul>
         </div>
       </div>
 
-     <div class="col-12 col-md-6 col-lg-5">
-       <div class="map" id="map"></div>
-     </div>
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="map" id="map"></div>
+      </div>
     </div>
   </div>
 </section>

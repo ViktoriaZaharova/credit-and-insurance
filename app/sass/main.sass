@@ -105,6 +105,18 @@ input, textarea, select
   width: 100%
   background: transparent
   color: #fff
+  transition: .3s ease
+  &:hover
+    background: #fff
+    box-shadow: 0px 0px 16px rgba(85, 255, 255, 0.24)
+    border: 1px solid #55FFFF
+    outline: none
+  &:focus
+    border: 1px solid #FFFFFF
+    background: transparent
+    outline: none
+    box-shadow: none
+
 
 label
   display: block
@@ -181,9 +193,17 @@ h3
   span
     background: $accent
   &:hover
+    background: $btn
+    box-shadow: 0px 0px 2px rgba(236, 247, 255, 0.4), 0px 0px 24px rgba(135, 205, 255, 0.24)
     span
       background: $btn
-      color: #000
+      color: $accent
+  &:focus
+    box-shadow: none
+    background: linear-gradient(to bottom, rgba(#0FBCBC,1) 0%,rgba($accent,1) 35%,rgba($accent,1) 63%,rgba(#0FBCBC,1) 100%)
+    span
+      background: $accent
+      color: #0FBCBC
 
 .btn-white
   color: #fff
@@ -191,9 +211,21 @@ h3
   span
     background: $accent
   &:hover
+    background: $btn
+    box-shadow: 0px 0px 2px rgba(236, 247, 255, 0.4), 0px 0px 24px rgba(135, 205, 255, 0.24)
     span
       background: $btn
-      color: #000
+      color: $accent
+    .svg-icon
+      fill: $accent
+  &:focus
+    box-shadow: none
+    background: linear-gradient(to bottom, rgba(#0FBCBC,1) 0%,rgba($accent,1) 35%,rgba($accent,1) 63%,rgba(#0FBCBC,1) 100%)
+    span
+      background: $accent
+      color: #0FBCBC
+    .svg-icon
+      fill: #0FBCBC
 
 .btn-blue
   color: $accent
@@ -201,9 +233,18 @@ h3
   span
     background: #fff
   &:hover
+    background: $accent
+    color: $btn
     span
-      background: $accent
-      color: #fff
+      background: transparent
+
+  &:focus
+    background: linear-gradient(to bottom, rgba(#3F608D,1) 0%,rgba(#fff,1) 35%,rgba(#fff,1) 63%,rgba(#3F608D,1) 100%)
+    color: #687E9B
+    span
+      background: #fff
+
+
 
 button
   outline: none
@@ -256,6 +297,9 @@ button
   &:hover
     color: #fff
 
+.nav-link.current
+  color: $btn
+
 .nav-item
   margin: 0 32px 0 0
   &:last-child
@@ -271,6 +315,16 @@ button
 
 .nav-item.dropdown
   margin: 0 17px 0 0
+
+.nav-tabs
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  border: none
+  width: 100%
+  margin: 16px auto 50px
+
 
 .breadcrumb
   background: transparent
@@ -288,13 +342,44 @@ button
     font-weight: 500
     letter-spacing: 0.05em
 
+.nav-tabs .nav-tabs-item
+  display: flex
+  align-items: center
+  margin: 0
+
+.nav-tabs-item+.nav-tabs-item:before
+  padding: 0
+  margin: 0 8px
+  content: ''
+  width: 25px
+  height: 8px
+  background: url("../img/arrow-right-blue.svg") no-repeat center
+    size: contain
+
+.nav-tabs .nav-tabs-link
+  text-transform: uppercase
+  color: $accent
+  border: none
+    radius: 0
+    bottom: 1px solid rgba(135, 205, 255, 0.8)
+  letter-spacing: 0.05em
+  font-size: 16px
+  font-weight: 500
+  margin: 0
+
+.nav-tabs .nav-tabs-link.active
+  color: #333333
+  border: none
+    radius: 0
+
+
 .breadcrumb-item.active
   a
     color: #ffffff
     border-bottom: 1px solid rgba(135, 205, 255, 0.24)
 
 
-.breadcrumb-item+.breadcrumb-item
+.breadcrumb-item+.breadcrumb-item, .nav-tabs-item+.nav-tabs-item
   padding-left: 0
 
 .breadcrumb-item+.breadcrumb-item::before
@@ -306,12 +391,22 @@ button
   background: url("../img/arrow-right.svg") no-repeat center
     size: contain
 
+.logo
+  transition: .3s ease
+
 
 //header
 header
-  background: $accent
   color: #fff
   margin: 0 0 -35px
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  //z-index: 1
+  .container
+    position: relative
+    z-index: 3
   .btn
     max-width: 206px
     font-size: 14px
@@ -330,13 +425,29 @@ header
   align-items: center
   justify-content: space-between
 
+.header
+  box-shadow: 0px 4px 8px rgba(18, 64, 107, 0.32), 0px 10px 48px rgba(19, 44, 78, 0.16)
+  background: $accent
+  .logo
+    max-width: 200px
+  .header-top
+    padding: 26px 0
 
+header.fixed
+  background: $accent
+  z-index: 2
+  .breadcrumb-nav
+    display: none
+  .logo
+    max-width: 200px
+  .header-top
+    padding: 25px 0
 
 //main
 main
   background: $accent
   color: #fff
-  padding: 0 0 57px
+  padding: 150px 0 57px
   .btn
     margin: 32px 0 0
 
@@ -377,12 +488,15 @@ main
   font-size: 14px
   text-align: center
   min-height: 248px
+  transition: .3s ease
+  cursor: pointer
   background: linear-gradient(to bottom, rgba(225,225,225,1) 0%,rgba(255,255,255,1) 38%,rgba(255,255,255,1) 63%,rgba(225,225,225,1) 100%)
   &__body
     width: 100%
     height: 100%
     background: #ffffff
-    padding: 32px 32px 40px
+    padding: 32px 30px 40px
+    transition: .3s ease
   &__icon
     width: 48px
     height: 48px
@@ -392,7 +506,14 @@ main
     margin: 0 auto 24px
   h3
     margin: 0 auto 8px
+  &:hover
+    box-shadow: 0px 10px 32px -2px rgba(0, 74, 173, 0.24)
+    background: $accent
+    .service-category-box__body
+      background: #fff
 
+.service-category-box-min
+  min-height: 192px
 
 //section stages-work
 .bg-light
@@ -522,12 +643,15 @@ main
 .help-box
   height: 100%
   padding: 1px
+  transition: .3s ease
+  cursor: pointer
   background: linear-gradient(to bottom, rgba(225,225,225,1) 0%,rgba(255,255,255,1) 38%,rgba(255,255,255,1) 63%,rgba(225,225,225,1) 100%)
   &__body
     width: 100%
     height: 100%
     background: #ffffff
     padding: 32px 32px 40px
+    transition: .3s ease
   &__icon
     width: 48px
     height: 48px
@@ -539,6 +663,11 @@ main
     padding: 8px 6px 9px 9px
     .svg-icon
       fill: $accent
+  &:hover
+    box-shadow: 0px 10px 32px -2px rgba(0, 74, 173, 0.24)
+    background: $accent
+    .help-box__body
+      background: #fff
 
 
 //about
@@ -587,16 +716,20 @@ main
 //.articles
 .articles
   .btn
-    margin: 32px auto 0
+    margin: 0 auto
 
 .articles-slider
   width: 100%
-  padding: 0 55px
-  margin: 32px auto 0
+  padding: 0 70px
+  margin: 0 auto
+  .slick-slide
+    padding: 32px
 
 .article-box
   width: 100%
+  color: #333
   padding: 1px
+  transition: .3s ease
   background: linear-gradient(to bottom, rgba(225,225,225,1) 0%,rgba(255,255,255,1) 38%,rgba(255,255,255,1) 63%,rgba(225,225,225,1) 100%)
   &__wrapper
     padding: 32px
@@ -604,6 +737,7 @@ main
     align-items: flex-start
     flex-wrap: wrap
     background: #fff
+    transition: .3s ease
   &__img
     display: flex
     align-items: center
@@ -618,9 +752,17 @@ main
   &__body
     width: calc(100% - 320px)
     padding: 0 0 0 24px
-  h3
+  &__title
     color: $accent
     margin: 0 0 16px
+    font-size: 24px
+    font-family: $title-font
+    line-height: 32px
+  &:hover
+    box-shadow: 0px 10px 32px -2px rgba(0, 74, 173, 0.24)
+    background: $accent
+    .article-box__wrapper
+      background: #fff
 
 .date
   display: flex
@@ -735,90 +877,111 @@ main
       padding: 12px
       background: #ECF7FF
       position: relative
+      display: flex
+      align-items: center
+      justify-content: center
       .svg-icon
         position: relative
         z-index: 1
-
+    &:hover
+      box-shadow: 0px 0px 2px #55FFFF, 0px 0px 24px rgba(0, 74, 173, 0.24)
+      background: $accent
+      a
+        background: transparent
+        fill: $btn
     &:last-child
       margin: 0
 
 
 .btn-burger
-  width: 26px
-  height: 18px
-  flex-direction: column
   align-items: center
-  justify-content: space-between
   cursor: pointer
   display: none
-  span
-    display: block
-    width: 100%
-    height: 2px
-    background: #fff
+  text-transform: uppercase
+  color: #fff
+  font-weight: 500
+  .btn
+    margin: 0 0 0 16px
+    width: 48px
+    height: 48px
+    padding: 1px
+    fill: #fff
+    span
+      padding: 18px 15px
 
 .mobile-menu
+  box-shadow: 0px 4px 8px rgba(18, 64, 107, 0.32), 0px 10px 48px rgba(19, 44, 78, 0.16)
   display: none
   position: fixed
   left: 0
   top: 0
   background: $accent
   color: #fff
-  padding: 20px
+  padding: 8px 20px
   overflow-y: auto
   height: 100%
   z-index: 3
-  max-width: 280px
+  max-width: 320px
   width: 100%
   .nav
-    margin: 20px 0
+    margin: 32px 0 24px
     display: flex
     flex-direction: column
     align-items: flex-start
   .nav-item
-    margin: 0 0 10px
+    width: 100%
+    margin: 0
+    border-bottom: 1px solid #87CDFF
+    &:last-child
+      border: none
+  .nav-link
+    padding: 12px 0
+    text-align: center
   .phone
-    margin: 0 0 20px
+    margin: 0 auto 8px
+    font-size: 16px
+    justify-content: center
+    padding: 12px 0
   .btn
+    color: $btn
+    width: 100%
     span
-      padding: 8px 20px
+      padding: 10px 20px
 
-.btn-close
-  width: 16px
-  height: 16px
-  margin: 0 0 20px auto
-  position: relative
+.logo-mobile
   display: flex
   align-items: center
   justify-content: center
-  &:before, &:after
-    content: ''
-    position: absolute
-    left: 0
-    top: 8px
-    background: #fff
-    width: 100%
-    height: 2px
-  &:before
-    transform: rotate(45deg)
-  &:after
-    transform: rotate(135deg)
+  max-width: 80px
+  width: 100%
+
+.close-mobile-menu
+  display: flex
+  align-items: center
+  text-transform: uppercase
+  font-weight: 500
+  cursor: pointer
+  &:hover
+    color: $btn
+  .btn
+    width: 48px
+    height: 48px
+    padding: 1px
+    fill: #fff
+    margin: 0 0 0 16px
+    span
+      padding: 11px
+
+
+.mobile-menu__header
+  display: flex
+  align-items: center
+  justify-content: space-between
 
 .service-category-two
   h2
     margin: 0 auto
-  .breadcrumb
-    justify-content: center
-    margin: 16px auto 48px
-    a
-      color: #333
-  .active
-    a
-      color: $accent
-      border-bottom-color: $accent
-  .breadcrumb-item + .breadcrumb-item::before
-    background: url("../img/arrow-right-blue.svg") no-repeat center
-      size: contain
+
 
 //legal
 .legal-services
@@ -830,6 +993,10 @@ main
   background: #fff
   min-height: 344px
   text-align: center
+  transition: .3s ease
+  cursor: pointer
+  &:hover
+    box-shadow: 0px 10px 32px -2px rgba(0, 74, 173, 0.24)
 
 .legal-services__img
   width: 100%
@@ -852,6 +1019,148 @@ main
   .slick-arrow-my
     span
       background: #fff
+    &:hover
+      span
+        background: transparent
+    &:focus
+      span
+        background: #fff
+
+.dropdown-menu
+  border: none
+    radius: 0
+  margin: 0
+  padding: 0
+  top: 100% !important
+  left: 50% !important
+  transform: translate(-50%,0) !important
+  box-shadow: 0px 0px 4px rgba(0, 74, 173, 0.24)
+
+.dropdown-item
+  padding: 8px 32px
+  border-bottom: 1px solid #87CDFF
+  letter-spacing: 0.05em
+  text-transform: uppercase
+  font-size: 16px
+  font-weight: 500
+  text-align: center
+  color: $accent
+
+  &:last-child
+    border: none
+    
+//page    
+.page
+  background: #fff
+  padding: 124px 0 80px
+  color: #333
+  h1
+    text-align: center
+    margin: 0 auto 32px
+    color: #333333
+
+.section-articles
+  .btn
+    margin: 8px auto 0
+
+.links-next
+  text-transform: uppercase
+  display: flex
+  align-items: center
+  justify-content: center
+  font-weight: 500
+  color: $accent
+  margin: 0 auto 24px
+  &__icon
+    fill: $accent
+    width: 25px
+    height: 8px
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 0 8px 0 0
+
+.article-box-row
+  display: none
+  &:nth-child(-n+5)
+    display: block
+
+.load-more
+  margin: 0 auto
+
+.article
+  padding: 124px 0 0
+  h1
+    margin: 0 auto 16px
+  .date
+    justify-content: center
+    margin: 0 auto 24px
+
+.article-img
+  max-height: 336px
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: hidden
+
+.article-item
+  .box-text
+    margin: 16px 0 0
+  h2
+    font-size: 32px
+    line-height: 48px
+
+.modal-backdrop.show
+  opacity: .8
+
+.modal-content
+  padding: 32px 48px 48px
+  border: none
+    radius: 0
+  .box-text
+    text-align: center
+    margin: 24px auto 32px
+
+.modal-dialog
+  max-width: 600px
+
+.modal-title
+  text-align: center
+  font-size: 32px
+  line-height: 48px
+  width: 100%
+
+.modal-footer
+  padding: 0
+  border: none
+  .btn
+    margin: 0 auto
+
+.modal-header, .modal-body
+  padding: 0
+  width: 100%
+  border: none
+
+button.close
+  position: absolute
+  right: -32px
+  top: 0
+  padding: 0
+  width: 24px
+  height: 24px
+  margin: 0
+  cursor: pointer
+  fill: #fff
+  opacity: 1
+  z-index: 1
+  text-shadow: none
+  display: flex
+  align-items: center
+  justify-content: center
+
+.modal-header .close
+  padding: 0
+  margin: 0
 
 
 @import "media"

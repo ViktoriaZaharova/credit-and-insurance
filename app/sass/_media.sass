@@ -3,7 +3,7 @@
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
+@media only screen and (max-width: 1200px)
   .stages-work__img
     max-width: 500px
 
@@ -43,7 +43,7 @@
     font-size: 14px
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
+@media only screen and (max-width: 992px)
   .stages-work__img
     max-width: 400px
 
@@ -73,13 +73,12 @@
     display: flex
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 930px)
+@media only screen and (max-width: 930px)
   .stages-work__img
     max-width: 350px
 
 
-
-@media only screen and (max-width : 768px)
+@media only screen and (max-width: 768px)
   .map
     width: calc(100% + 48px)
     float: none
@@ -106,7 +105,7 @@
   .p-80
     padding: 40px 0
 
-  h3
+  h3, .article-box__title
     font-size: 18px
     line-height: normal
 
@@ -121,6 +120,7 @@
 
   .about .stages-work__img
     margin: 0 auto 0 0
+
     &:after
       bottom: 20px
 
@@ -135,8 +135,10 @@
 
   .service-category
     padding: 50px 0 30px
+
     h2
       margin: 0 auto 30px
+
       br
         display: none
 
@@ -147,10 +149,11 @@
     margin: 20px auto 0
     max-width: 400px
     width: 100%
+
     &:before
       left: 50%
       top: 50%
-      transform: translate(-50%,-50%)
+      transform: translate(-50%, -50%)
 
   .logo
     margin: 0 auto
@@ -160,18 +163,27 @@
     max-width: 300px
     width: 100%
 
-  header
-    padding: 0 0 30px
+
 
   .breadcrumb
     font-size: 14px
     justify-content: center
 
-  .header-top
+  .header-top, .header .header-top
     padding: 10px 0
 
+  button.close
+    right: 10px
+    top: 10px
+    fill: $accent
+
+  .modal-title
+    font-size: 26px
+    line-height: normal
+
+
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 680px)
+@media only screen and (max-width: 680px)
   .article-box__wrapper
     flex-direction: column
     align-items: center
@@ -187,11 +199,20 @@
   .articles-slider
     padding: 0 30px
 
+  header
+    .btn
+      display: none
 
-@media only screen and (max-width : 575px)
+    .btn-burger
+      .btn
+        display: flex
+
+
+@media only screen and (max-width: 575px)
   .list-social
     li
       margin: 0 10px 10px 0
+
       &:last-child
         margin: 0 0 10px
 
@@ -209,7 +230,13 @@
     height: 300px
 
   main
-    padding: 0 0 40px
+    padding: 120px 0 40px
+
+  .page
+    padding: 100px 0 40px
+
+  .article
+    padding: 100px 0 0
 
   .btn
     font-size: 14px
@@ -225,21 +252,69 @@
 
   .legal-services__box
     min-height: 300px
+
     br
       display: none
 
   .legal-services__body
     padding: 24px
 
+  .breadcrumb
+    font-size: 10px
 
-@media only screen and (max-width : 480px)
-	header
+  header
+    .phone
+      display: none
+    .logo
+      width: 100%
+      height: 40px
+      background: url("../img/logo-mobile.png") no-repeat center
+        size: contain
+      margin: 10px auto 0
+      img
+        display: none
+
+
+  .btn-burger
+    margin: 0 0 0 auto
+
+  header.fixed
+    .header-top
+      padding: 8px 0
+
+  .main-content
+    padding: 0
+
+  .article-item h2
+    font-size: 26px
+    line-height: normal
+
+  .modal-content
+    padding: 24px
+
+@media only screen and (max-width: 480px)
+  header
     .btn
       display: none
 
+    .btn-burger
+      .btn
+        display: flex
+
+  .breadcrumb-nav
+    display: none
+
+  main
+    padding: 100px 0 40px
 
 /* Custom, iPhone Retina */
-@media only screen and (max-width : 360px)
+@media only screen and (max-width: 360px)
   .breadcrumb
     font-size: 12px
+
+  .articles-slider
+    margin: 30px auto
+    .slick-slide
+      padding: 0
+
 
