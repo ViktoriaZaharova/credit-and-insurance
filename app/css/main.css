@@ -289,6 +289,9 @@ button {
   .phone:hover {
     color: #fff; }
 
+.nav-menu .nav-link:hover {
+  color: #55FFFF; }
+
 .nav-link {
   padding: 0;
   color: #fff;
@@ -305,6 +308,12 @@ button {
   margin: 0 32px 0 0; }
   .nav-item:last-child {
     margin: 0; }
+
+.dropdown.show .dropdown-toggle::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background: url("../img/arrow-bottom-blue.svg") no-repeat center;
+    background-size: 100%; }
 
 .dropdown-toggle::after {
   border: none;
@@ -1182,8 +1191,8 @@ main {
   left: 50% !important;
   -webkit-transform: translate(-50%, 0) !important;
           transform: translate(-50%, 0) !important;
-  -webkit-box-shadow: 0px 0px 4px rgba(0, 74, 173, 0.24);
-          box-shadow: 0px 0px 4px rgba(0, 74, 173, 0.24); }
+  -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 74, 173, 0.24)) drop-shadow(0px 4px 8px rgba(0, 74, 173, 0.16));
+          filter: drop-shadow(0px 0px 4px rgba(0, 74, 173, 0.24)) drop-shadow(0px 4px 8px rgba(0, 74, 173, 0.16)); }
 
 .dropdown-item {
   padding: 11.5px 32px;

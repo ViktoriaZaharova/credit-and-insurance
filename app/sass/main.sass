@@ -286,6 +286,11 @@ button
   &:hover
     color: #fff
 
+.nav-menu
+  .nav-link
+    &:hover
+      color: $btn
+
 .nav-link
   padding: 0
   color: #fff
@@ -302,6 +307,12 @@ button
   margin: 0 32px 0 0
   &:last-child
     margin: 0
+
+.dropdown.show
+  .dropdown-toggle::after
+    transform: rotate(180deg)
+    background: url("../img/arrow-bottom-blue.svg") no-repeat center
+      size: 100%
 
 .dropdown-toggle::after
   border: none
@@ -1037,7 +1048,8 @@ main
   top: 100% !important
   left: 50% !important
   transform: translate(-50%,0) !important
-  box-shadow: 0px 0px 4px rgba(0, 74, 173, 0.24)
+  //box-shadow: 0px 0px 4px rgba(0, 74, 173, 0.24)
+  filter: drop-shadow(0px 0px 4px rgba(0, 74, 173, 0.24)) drop-shadow(0px 4px 8px rgba(0, 74, 173, 0.16))
 
 .dropdown-item
   padding: 11.5px 32px
