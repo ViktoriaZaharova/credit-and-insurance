@@ -106,16 +106,17 @@ input, textarea, select
   background: transparent
   color: #fff
   transition: .3s ease
-  &:hover
+  &:focus
     background: #fff
-    box-shadow: 0px 0px 16px rgba(85, 255, 255, 0.24)
+    box-shadow: 0 0 16px rgba(85, 255, 255, 0.24)
     border: 1px solid #55FFFF
     outline: none
-  &:focus
-    border: 1px solid #FFFFFF
-    background: transparent
-    outline: none
-    box-shadow: none
+    color: #000
+  //&:hover
+  //  border: 1px solid #FFFFFF
+  //  background: transparent
+  //  outline: none
+  //  box-shadow: none
 
 
 label
@@ -186,64 +187,61 @@ h3
     width: 100%
     height: 100%
     transition: .3s ease
+    background: none
 
 .btn-accent
   color: $btn
-  background: linear-gradient(to bottom, rgba(85,255,255,1) 0%,rgba($accent,1) 38%,rgba($accent,1) 63%,rgba(85,255,255,1) 100%)
-  span
-    background: $accent
+  border-width: 1px
+  border-image-slice: 1
+  border-style: solid
+  border-image-source: linear-gradient(to bottom, rgba(85,255,255,1) 0%,rgba($accent,1) 38%,rgba($accent,1) 63%,rgba(85,255,255,1) 100%)
   &:hover
     background: $btn
+    border: 1px solid $btn
     box-shadow: 0px 0px 2px rgba(236, 247, 255, 0.4), 0px 0px 24px rgba(135, 205, 255, 0.24)
-    span
-      background: $btn
-      color: $accent
+    color: $accent
   &:focus
     box-shadow: none
-    background: linear-gradient(to bottom, rgba(#0FBCBC,1) 0%,rgba($accent,1) 35%,rgba($accent,1) 63%,rgba(#0FBCBC,1) 100%)
-    span
-      background: $accent
-      color: #0FBCBC
+    border-image-source: linear-gradient(to bottom, rgba(#0FBCBC,1) 0%,rgba($accent,1) 35%,rgba($accent,1) 63%,rgba(#0FBCBC,1) 100%)
+    color: #0FBCBC
 
 .btn-white
   color: #fff
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(0,74,173,1) 35%,rgba(0,74,173,1) 63%,rgba(255,255,255,1) 100%)
-  span
-    background: $accent
+  border-width: 1px
+  border-image-slice: 1
+  border-style: solid
+  border-image-source: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(0,74,173,1) 35%,rgba(0,74,173,1) 63%,rgba(255,255,255,1) 100%)
   &:hover
+    color: $accent
+    border: 1px solid $btn
     background: $btn
     box-shadow: 0px 0px 2px rgba(236, 247, 255, 0.4), 0px 0px 24px rgba(135, 205, 255, 0.24)
-    span
-      background: $btn
-      color: $accent
     .svg-icon
       fill: $accent
   &:focus
     box-shadow: none
-    background: linear-gradient(to bottom, rgba(#0FBCBC,1) 0%,rgba($accent,1) 35%,rgba($accent,1) 63%,rgba(#0FBCBC,1) 100%)
-    span
-      background: $accent
-      color: #0FBCBC
+    color: #0FBCBC
+    border-image-source: linear-gradient(to bottom, rgba(#0FBCBC,1) 0%,rgba($accent,1) 35%,rgba($accent,1) 63%,rgba(#0FBCBC,1) 100%)
+    background: transparent
     .svg-icon
       fill: #0FBCBC
 
 .btn-blue
   color: $accent
-  background: linear-gradient(to bottom, rgba($accent,1) 0%,rgba(#fff,1) 35%,rgba(#fff,1) 63%,rgba($accent,1) 100%)
-  span
-    background: #fff
+  border-width: 1px
+  border-image-slice: 1
+  border-style: solid
+  border-image-source: linear-gradient(to bottom, rgba($accent,1) 0%,rgba(#fff,1) 35%,rgba(#fff,1) 63%,rgba($accent,1) 100%)
   &:hover
+    border: 1px solid $accent
     background: $accent
     color: $btn
-    span
-      background: transparent
-
+    box-shadow: 0 0 2px #55FFFF, 0 0 24px rgba(0, 74, 173, 0.24)
   &:focus
-    background: linear-gradient(to bottom, rgba(#3F608D,1) 0%,rgba(#fff,1) 35%,rgba(#fff,1) 63%,rgba(#3F608D,1) 100%)
+    background: transparent
     color: #687E9B
-    span
-      background: #fff
-
+    box-shadow: none
+    border-image-source: linear-gradient(to bottom, rgba(#3F608D,1) 0%,rgba(#fff,1) 35%,rgba(#fff,1) 63%,rgba(#3F608D,1) 100%)
 
 
 button
@@ -417,6 +415,9 @@ header
     margin: 0 auto 0 0
   .phone
     margin: 0 24px 0 0
+  .logo
+    .img-mobile
+      display: none
 
 .header-top
   padding: 26px 0 38px
@@ -603,23 +604,23 @@ main
   font-weight: 500
   letter-spacing: 0.05em
   color: $accent
-  padding: 1px
   margin: 0 20px 0 0
   position: relative
   transform: none
   left: 0
   top: 0
   right: 0
-  background: linear-gradient(to bottom, rgba($accent,1) 0%,rgba(#fff,1) 35%,rgba(#fff,1) 63%,rgba($accent,1) 100%)
+  border-width: 1px
+  border-image-slice: 1
+  border-style: solid
+  border-image-source: linear-gradient(to bottom, rgba($accent,1) 0%,rgba(#fff,1) 35%,rgba(#fff,1) 63%,rgba($accent,1) 100%)
   &:last-child
     margin: 0
   span
     display: flex
     align-items: center
     justify-content: center
-    width: 100%
-    height: 100%
-    background: #ECF7FF
+    background: none
     padding: 8px 48px
   &:before
     display: none
@@ -869,13 +870,16 @@ main
     margin: 0 16px 0 0
     width: 48px
     height: 48px
-    background: linear-gradient(to bottom, rgba($accent,1) 0%,rgba(#fff,1) 35%,rgba(#fff,1) 63%,rgba($accent,1) 100%)
+    border-image-slice: 1
+    border-width: 1px
+    border-style: solid
+    border-image-source: linear-gradient(to bottom, rgba($accent,1) 0%,rgba(#fff,1) 35%,rgba(#fff,1) 63%,rgba($accent,1) 100%)
     a
       width: 100%
       height: 100%
       fill: $accent
       padding: 12px
-      background: #ECF7FF
+      background: none
       position: relative
       display: flex
       align-items: center
@@ -884,11 +888,13 @@ main
         position: relative
         z-index: 1
     &:hover
-      box-shadow: 0px 0px 2px #55FFFF, 0px 0px 24px rgba(0, 74, 173, 0.24)
+      border: 1px solid $accent
+      box-shadow: 0 0 2px #55FFFF, 0 0 24px rgba(0, 74, 173, 0.24)
       background: $accent
       a
         background: transparent
         fill: $btn
+
     &:last-child
       margin: 0
 
@@ -949,9 +955,6 @@ main
       padding: 10px 20px
 
 .logo-mobile
-  display: flex
-  align-items: center
-  justify-content: center
   max-width: 80px
   width: 100%
 
@@ -1037,7 +1040,7 @@ main
   box-shadow: 0px 0px 4px rgba(0, 74, 173, 0.24)
 
 .dropdown-item
-  padding: 8px 32px
+  padding: 11.5px 32px
   border-bottom: 1px solid #87CDFF
   letter-spacing: 0.05em
   text-transform: uppercase
